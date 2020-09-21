@@ -1,0 +1,61 @@
+<%- include("../partials/header.ejs") %>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item ">
+        <img class="d-block w-100" src="https://i.ibb.co/SRcjw5B/edc-buy-plants-online-1589578046.jpg"
+          alt="First slide">
+      </div>
+      <div class="carousel-item active">
+        <div id="header" class="carousel-caption d-none d-md-block jumbotron jumbotron-fluid">
+          <p class="lead jumbotronText"></p>
+          <h5 class="display-4 jumbotronText">The healing power of plants</h5>
+        </div>
+        <img class="d-block w-100" src="https://i.ibb.co/XV9BmCP/plants1-1551895073.png" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100"
+          src="https://i.ibb.co/yYg60Ft/The-Sill-Living-Room-018-e76d3b972bd045f88abbc4b955209938.jpg"
+          alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <br />
+  <section>
+    <h3 class="text-center sectionHeader">
+      PLANTS HUB
+    </h3>
+    <br />
+    <div class="container">
+      <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% plants.forEach(function(plant){ %>
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div>
+            <a href="/plants/<%= plant._id %>">
+              <img src="<%= plant.image %>" class="img-thumbnail" height="400"></a>
+          </div>
+          <div class="caption">
+            <h5><%=plant.name%></h5>
+            <p>$<%= plant.price%></p>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+  </section>
+  <hr class="mt-5 mb-3">
+
+
+  <%- include("../partials/footer.ejs") %>
