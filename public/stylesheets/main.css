@@ -1,0 +1,52 @@
+body {
+  background: #e8dcdf;
+
+}
+
+.thumbnail img {
+  width: 100%;
+}
+
+.img-thumbnail {
+  min-width: 300;
+  min-height: 640;
+}
+
+.thumbnail {
+  padding: 0;
+}
+
+.thumbnail .caption {
+  padding: 9px;
+}
+
+.delete-form {
+  display: inline;
+}
+
+#slideshow {
+  max-height: 300px;
+}
+
+#header {
+  padding: auto 0;
+  margin-left: 0;
+  background: rgba(14, 15, 15, 0.3);
+}
+
+.jumbotronText {
+  font-family: 'EB Garamond', serif;
+  color: beige;
+  margin-bottom: 0;
+  margin-top: 10px;
+  text-shadow: 5px 5px 5px #0E0F0F;
+  font-weight: normal;
+}
+
+#login {
+  background: #e8dcdf;
+}
+
+.nav-link {
+  color: gray;
+}
