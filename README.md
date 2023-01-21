@@ -1,5 +1,5 @@
 View a project from : 
-https://sunplants.herokuapp.com/plants
+https://limitless-sea-61565.herokuapp.com/
 
 A blog for plant lovers with fully functional signup for accounts and interactive for users
 
