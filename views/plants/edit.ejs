@@ -1,0 +1,32 @@
+<%- include("../partials/header.ejs") %>
+<div class="container mt-5">
+  <h1 style="text-align: Center">Edit Your New Collection</h1>
+  <div class="row">
+    <div style="width: 30%;   margin: 25px auto;">
+      <form action="/plants/<%= plant._id %>?_method=PUT" method="POST">
+        <div class="form-group">
+          <input class="form-control" type="text" name="plant[name]" value="<%= plant.name %>" >
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="number" name="plant[price]" value="<%= plant.price %>">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="text" name="plant[image]" value="<%= plant.image %>">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="text" name="plant[description]" value="<%= plant.description%>">
+        </div>
+        <div class="form-group">
+          <button class="btn btn-lg btn-success btn-block">Submit!</button>
+        </div>
+      </form>
+      <div class="mt-3 text-muted text-center">
+        <small>
+
+          <a href="/plants">Go back</a>
+        </small>
+      </div>
+    </div>
+  </div>
+  <hr class="mt-5 mb-3">
+  <%- include("../partials/footer.ejs") %>

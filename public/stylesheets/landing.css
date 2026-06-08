@@ -1,0 +1,111 @@
+body {
+  padding: auto 0;
+  margin-left: 0;
+  background: rgba(14, 15, 15, 0.3);
+  background-color: black;
+}
+
+#landing-header {
+  font-family: 'EB Garamond', serif;
+  color: beige;
+  margin-bottom: 0;
+  margin-top: 10px;
+  text-shadow: 5px 5px 5px #0E0F0F;
+  font-weight: normal;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+
+}
+
+#landing-header h4 {
+  color: #fff;
+
+}
+
+.slideshow {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite;
+}
+
+.slideshow li:nth-child(1) {
+  background-image: url(https://i.ibb.co/TrrmTdn/about-me.jpg);
+  animation-delay: 0s;
+}
+
+.slideshow li:nth-child(2) {
+  background-image: url(https://instagram.fbed1-2.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/67837610_1077868785736515_3474712633682057233_n.jpg?_nc_ht=instagram.fbed1-2.fna.fbcdn.net&_nc_cat=103&_nc_ohc=86NnGY710zMAX9XSqYU&_nc_tp=19&oh=dd89e2039b60f0aba9762d8fbbed6511&oe=5F92CC1B);
+  animation-delay: 7s;
+}
+
+.slideshow li:nth-child(3) {
+  background-image: url(https://decoholic.org/wp-content/uploads/2020/03/redecorate-without-miney-3-720x900.jpg);
+  animation-delay: 12s;
+}
+
+.slideshow li:nth-child(4) {
+  background-image: url(https://i.pinimg.com/564x/91/74/00/91740095a70ae361b6ecfb3303d6b75d.jpg);
+  animation-delay: 17s;
+}
+
+.slideshow li:nth-child(5) {
+  background-image: url(https://thatplantylife.com/must-have-plant-for-a-jungalicious-home-monstera-deliciosa/);
+  animation-delay: 22s;
+}
+
+.slideshow li:nth-child(6) {
+  background-image: url(https://www.pinterest.com/pin/304555993550364661/);
+  animation-delay: 27s;
+}
+
+.slideshow li:nth-child(7) {
+  background-image: url(https://i.pinimg.com/564x/d7/72/12/d772129979acca3ec091a59d297457e5.jpg);
+  animation-delay: 32s;
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+
+  20% {
+    opacity: 1
+  }
+
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - class added by modernizr */
+.no-cssanimations .slideshow li {
+  opacity: 1;
+}

@@ -1,0 +1,60 @@
+<%- include("../partials/header.ejs") %>
+<div class="container mt-5" >
+  <div class="row">
+    <div class="col-md-3">
+      <!-- <p class="lead">ID</p>
+     <div class="list-group">
+        <li class="list-group-item">Info 1</li>
+        <li class="list-group-item">Info 2</li>
+        <li class="list-group-item">Info 3</li>
+      </div> -->
+
+    </div>
+    <div class="col-md-9">
+      <div>
+        <img src="<%= plant.image %>" class="img-thumbnail">
+        <div class="caption-full">
+
+          <h4><a><%=plant.name%></a></h4>
+          <h6 class="pull-right">$<em><%= plant.price %></em></h6>
+          <p><a><%=plant.description%></a></p>
+          <em>Written by <%= plant.author.username %></em>
+          <br/>
+          <span><em><%= plant.created %></em></span>
+        </div>
+        <br>
+      </div>
+      <div class="well">
+        <div class="text-left">
+          <a class="btn btn-xs btn btn-success " href="/plants/<%= plant._id %>/comments/new">
+            <i class="fas fa-comment"></i></a>
+          <% if(currentUser && plant.author.id.equals(currentUser._id)){ %>
+          <a class="btn btn-xs btn btn-warning" href="/plants/<%= plant._id %>/edit"><i class="fas fa-edit"></i></a>
+          <form class="delete-form" action="/plants/<%= plant._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-xs btn btn-danger"><i class="fas fa-trash"></i></button>
+          </form>
+          <% }%>
+        </div>
+        <hr />
+        <% plant.comments.forEach(function(comment){ %>
+        <div class="row">
+          <div class="col-sm-9">
+            <strong><%= comment.author.username %></strong>&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <p><%= comment.text %></p>
+            <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+            <a class="btn btn-sm btn btn-warning" href="/plants/<%= plant._id %>/comments/<%=comment._id %>/edit"><i
+                class="fas fa-edit"></i></a>
+            <form class="delete-form" action="/plants/<%= plant._id %>/comments/<%=comment._id %>?_method=DELETE"
+              method="POST">
+              <button class="btn btn-sm btn btn-danger"><i class="fas fa-trash"></i></button>
+            </form>
+            <% } %>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <%- include("../partials/footer.ejs") %>
